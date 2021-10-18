@@ -40,6 +40,11 @@ public class Mission implements Serializable {
 		this.description = description;
 	}
 	
+	public Mission(String name){
+		this.name = name;
+		
+	}
+	
 
 	public int getId() {
 		return id;

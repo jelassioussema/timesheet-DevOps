@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.services.MissionService;
 
@@ -31,7 +32,10 @@ public class MissionServiceImplTest {
 	
 	@Test
 	public void testAddMission() throws ParseException {
-		Mission mi = new Mission("prrrroject"); 
+
+		Departement d= new Departement("depart 1");
+	
+		Mission mi = new Mission("projet 1","premier projet",d); 
 		Mission MissionAdded = m.addMission(mi); 
 		Assert.assertEquals(mi.getName(), MissionAdded.getName());
 	}

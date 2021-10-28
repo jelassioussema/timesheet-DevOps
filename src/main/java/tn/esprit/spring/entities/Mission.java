@@ -40,6 +40,15 @@ public class Mission implements Serializable {
 		this.description = description;
 	}
 	
+	public Mission( String name, String description, Departement departement) {
+		super();
+		
+		this.name = name;
+		this.description = description;
+		this.departement = departement;
+		
+	}
+
 	public Mission(String name){
 		this.name = name;
 		

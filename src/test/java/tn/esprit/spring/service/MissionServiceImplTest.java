@@ -31,7 +31,7 @@ public class MissionServiceImplTest {
 	
 	@Test
 	public void testAddMission() throws ParseException {
-		Mission mi = new Mission("project"); 
+		Mission mi = new Mission("prrrroject"); 
 		Mission MissionAdded = m.addMission(mi); 
 		Assert.assertEquals(mi.getName(), MissionAdded.getName());
 	}

@@ -26,11 +26,11 @@ public class MissionExterneServiceImpl implements MissionExterneService {
 			l.info("In retrieveAllMissionExternes() : ");
 			MissionExternes = (List<MissionExterne>) MissionExterneRepository.findAll();  
 			for (MissionExterne MissionExterne : MissionExternes) {
-				l.debug("MissionExterne +++ : " + MissionExterne);
+				l.debug("MissionExterne +++ : {}." , MissionExterne);
 			} 
 			l.info("Out of retrieveAllMissionExternes() : ");
 		}catch (Exception e) {
-			l.error("Error in retrieveAllMissionExternes() : " + e);
+			l.error("Error in retrieveAllMissionExternes() : {0} " , e);
 		}
 
 		return MissionExternes;
@@ -54,9 +54,9 @@ public class MissionExterneServiceImpl implements MissionExterneService {
 
 	@Override
 	public MissionExterne retrieveMissionExterne(String id) {
-		l.info("in  retrieveMissionExterne id = " + id);
-		MissionExterne d =  MissionExterneRepository.findById(Long.parseLong(id)).get(); 
-		l.info("MissionExterne returned : " + d);
+		l.info("in  retrieveMissionExterne id = {}. " , id);
+		MissionExterne d =  MissionExterneRepository.findById(Long.parseLong(id)).orElse(null); 
+		l.info("MissionExterne returned : {}. " , d);
 		return d; 
 	}
 

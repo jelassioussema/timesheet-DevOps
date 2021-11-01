@@ -28,11 +28,11 @@ public class DepartementServiceImpl implements IDepartementService {
 			l.info("In retrieveAllDepartements() : ");
 			departements = (List<Departement>) departementRepository.findAll();  
 			for (Departement departement : departements) {
-				l.debug("departement +++ : " + departement);
+				l.debug("departement +++ : {}." , departement);
 			} 
 			l.info("Out of retrieveAllDepartements() : ");
 		}catch (Exception e) {
-			l.error("Error in retrieveAllDepartements() : " + e);
+			l.error("Error in retrieveAllDepartements() : {0} " , e);
 		}
 
 		return departements;
@@ -56,9 +56,9 @@ public class DepartementServiceImpl implements IDepartementService {
 
 	@Override
 	public Departement retrieveDepartement(String id) {
-		l.info("in  retrieveDepartement id = " + id);
+		l.info("in  retrieveDepartement id = {}. " , id);
 		Departement d =  departementRepository.findById(Long.parseLong(id)).orElse(null); 
-		l.info("departement returned : " + d);
+		l.info("departement returned : {}." , d);
 		return d; 
 	}
 

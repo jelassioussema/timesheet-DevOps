@@ -66,7 +66,7 @@ public class Employe implements Serializable {
 		super();
 	}
 	
-		
+	/*	
 	public Employe(int id, String prenom, String nom, String email, String password, boolean actif, Role role) {
 		super();
 		this.id = id;
@@ -189,6 +189,6 @@ public class Employe implements Serializable {
 				+ password + ", actif=" + actif + ", role=" + role + "]";
 	}
 	
-	
+	*/
 	
 }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Mission;
-import tn.esprit.spring.services.*;
 import tn.esprit.spring.repository.MissionRepository;
 
 @Service
@@ -27,11 +26,11 @@ public class MissionServiceImpl implements MissionService {
 			l.info("In retrieveAllMissions() : ");
 			Missions = (List<Mission>) MissionRepository.findAll();  
 			for (Mission Mission : Missions) {
-				l.debug("Mission +++ : " + Mission);
+				l.debug("Mission +++ : {}." , Mission);
 			} 
 			l.info("Out of retrieveAllMissions() : ");
 		}catch (Exception e) {
-			l.error("Error in retrieveAllMissions() : " + e);
+			l.error("Error in retrieveAllMissions() : {0} " , e);
 		}
 
 		return Missions;
@@ -55,9 +54,9 @@ public class MissionServiceImpl implements MissionService {
 
 	@Override
 	public Mission retrieveMission(String id) {
-		l.info("in  retrieveMission id = " + id);
-		Mission d =  MissionRepository.findById(Long.parseLong(id)).get(); 
-		l.info("Mission returned : " + d);
+		l.info("in  retrieveMission id = {}." , id);
+		Mission d =  MissionRepository.findById(Long.parseLong(id)).orElse(null); 
+		l.info("Mission returned : {}." , d);
 		return d; 
 	}
 

@@ -32,11 +32,11 @@ public class UserServiceImpl implements IUserService {
 			l.info("In retrieveAllUsers() : ");
 			users = (List<User>) userRepository.findAll();  
 			for (User user : users) {
-				l.debug("user +++ : " + user);
+				l.debug("user +++ : {}. " , user);
 			} 
 			l.info("Out of retrieveAllUsers() : ");
 		}catch (Exception e) {
-			l.error("Error in retrieveAllUsers() : " + e);
+			l.error("Error in retrieveAllUsers() : {0}" , e);
 		}
 
 		return users;
@@ -60,11 +60,9 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User retrieveUser(String id) {
-		l.info("in  retrieveUser id = " + id);
-		//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
-		//int i = 1/0; 
+		l.info("in  retrieveUser id = {}. " , id);
 		User u =  userRepository.findById(Long.parseLong(id)).orElse(null); 
-		l.info("user returned : " + u);
+		l.info("user returned : {}." , u);
 		return u; 
 	}
 

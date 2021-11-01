@@ -25,7 +25,7 @@ public class MissionServiceImplTest {
 	public void testRetrieveAllMissions() {
 		List<Mission> listMissions = m.retrieveAllMission(); 
 		// if there are 7 users in DB : 
-		Assert.assertEquals(26, listMissions.size());
+		Assert.assertEquals(60, listMissions.size());
 	}
 	
 	

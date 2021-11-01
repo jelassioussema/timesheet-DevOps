@@ -55,7 +55,7 @@ public class MissionExterneServiceImpl implements MissionExterneService {
 	@Override
 	public MissionExterne retrieveMissionExterne(String id) {
 		l.info("in  retrieveMissionExterne id = " + id);
-		MissionExterne d =  MissionExterneRepository.findById(Long.parseLong(id)).get(); 
+		MissionExterne d =  MissionExterneRepository.findById(Long.parseLong(id)).orElse(null); 
 		l.info("MissionExterne returned : " + d);
 		return d; 
 	}

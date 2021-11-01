@@ -78,7 +78,7 @@
 	<repositories>
 <repository>
 <id>maven-group</id>
-<url>http://your-host:8081/repository/maven-group/</url>
+<url>http://your-host:8081/repository/maven-releases/</url>
 </repository>
 </repositories>
 

@@ -54,7 +54,7 @@ public class ContratServiceTest {
 	public void testModifyContrat() throws ParseException   {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
-		Contrat c = new Contrat(2L,d,"Stage", 1500) ;
+		Contrat c = new Contrat(14L,d,"Stage", 1500) ;
 		Contrat contratUpdated  = Cu.UpdateContrat(c); 
 		Assert.assertEquals(c.getTypeContrat(), contratUpdated.getTypeContrat());
 		
@@ -62,13 +62,13 @@ public class ContratServiceTest {
 	
 	@Test
 	public void testRetrieveUser() {
-		Contrat contratRetrieved = Cu.retrieveContrat("2"); 
-		Assert.assertEquals(2L, contratRetrieved.getId().longValue());
+		Contrat contratRetrieved = Cu.retrieveContrat("14"); 
+		Assert.assertEquals(14L, contratRetrieved.getId().longValue());
 	}
 		
 	@Test
 	public void testDeleteContrat() {
-		Cu.deleteContrat("3");
+		Cu.deleteContrat("13");
 //		Assert.assertNull(Cu.retrieveContrat("45"));
 	}
 	

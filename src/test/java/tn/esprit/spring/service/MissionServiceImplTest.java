@@ -21,12 +21,7 @@ public class MissionServiceImplTest {
 	@Autowired
 	MissionService m; 
 
-	@Test
-	public void testRetrieveAllMissions() {
-		List<Mission> listMissions = m.retrieveAllMission(); 
-		// if there are 7 users in DB : 
-		Assert.assertEquals(82, listMissions.size());
-	}
+	
 	
 	
 	@Test

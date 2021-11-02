@@ -60,6 +60,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	public Entreprise retrieveEntreprise(String id) {
 		l.info("in  retrieveEntreprise id = " + id);
 		Entreprise e =  entrepriseRepository.findById(Long.parseLong(id)).orElse(null);
+		//l.info("entreprise returned : " + e.getId());
 		l.info("entreprise returned : " + e);
 		return e; 		
 	}

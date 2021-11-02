@@ -12,6 +12,6 @@ public interface IEntrepriseService {
 	Entreprise addEntreprise(Entreprise e);
 	void deleteEntreprise(String string);
 	Entreprise updateEntreprise(Entreprise e);
-	Entreprise retrieveEntreprise(String string);
+	Entreprise retrieveEntreprise(String id);
 
 }

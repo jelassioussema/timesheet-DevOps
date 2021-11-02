@@ -26,12 +26,12 @@ public class EntrepriseServiceImplTest {
 	@Autowired
 	IEntrepriseService en;
 	
-	/*@Test
+	@Test
 	public void testRetrieveAllEntreprises() {
 		List<Entreprise> listEntreprises = en.retrieveAllEntreprises(); 
 		// if there are 7 users in DB : 
-		Assert.assertEquals(9, listEntreprises.size());
-	}*/
+		Assert.assertEquals(5, listEntreprises.size());
+	}
 	@Test
 	public void testAddEntreprise() throws ParseException {
 		Entreprise e = new Entreprise("esprit", "univ"); 
@@ -39,7 +39,7 @@ public class EntrepriseServiceImplTest {
 		Assert.assertEquals(e.getName(), entrepriseAdded.getName());
 	}
 	
-	/*@Test
+	@Test
 	public void testModifyEntreprise() throws ParseException   {
 		Entreprise e = new Entreprise(1L,"esprit1", "univ1"); 
 		Entreprise entrepriseUpdated  = en.updateEntreprise(e); 
@@ -48,12 +48,12 @@ public class EntrepriseServiceImplTest {
 	@Test
 	public void testRetrieveEntreprise() {
 		Entreprise entrepriseRetrieved = en.retrieveEntreprise("1"); 
-		Assert.assertEquals(1L, entrepriseRetrieved.getId());
+		Assert.assertEquals(1L, entrepriseRetrieved.getId().longValue());
 	}
 	@Test
 	public void testDeleteEntreprise() {
-		en.deleteEntreprise("17");
-		Assert.assertNull(en.retrieveEntreprise("3"));
-	}*/
+		en.deleteEntreprise("9");
+		Assert.assertNull(en.retrieveEntreprise("9"));
+	}
 }
 

@@ -50,8 +50,8 @@ public class DepartementServiceImplTest {
 	
 	@Test
 	public void testDeleteDepartement() {
-		ds.deleteDepartement("56");
-		Assert.assertNull(ds.retrieveDepartement("5"));
+		ds.deleteDepartement("58");
+		Assert.assertNull(ds.retrieveDepartement("58"));
 	}
 	
 

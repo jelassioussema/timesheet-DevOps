@@ -56,7 +56,7 @@ public class MissionServiceImpl implements MissionService {
 	@Override
 	public Mission retrieveMission(String id) {
 		l.info("in  retrieveMission id = " + id);
-		Mission d =  MissionRepository.findById(Long.parseLong(id)).get(); 
+		Mission d =  MissionRepository.findById(Long.parseLong(id)).orElse(null); 
 		l.info("Mission returned : " + d);
 		return d; 
 	}

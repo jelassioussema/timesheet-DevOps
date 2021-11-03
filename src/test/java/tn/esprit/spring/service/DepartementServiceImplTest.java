@@ -24,7 +24,7 @@ public class DepartementServiceImplTest {
 	@Test
 	public void testRetrieveAllDepartements() {
 		List<Departement> listDepartements = ds.retrieveAllDepartements(); 
-		Assert.assertEquals(7, listDepartements.size());
+		Assert.assertEquals(8, listDepartements.size());
 	}
 	
 	
@@ -50,8 +50,8 @@ public class DepartementServiceImplTest {
 	
 	@Test
 	public void testDeleteDepartement() {
-		ds.deleteDepartement("58");
-		Assert.assertNull(ds.retrieveDepartement("58"));
+		ds.deleteDepartement("59");
+		Assert.assertNull(ds.retrieveDepartement("59"));
 	}
 	
 

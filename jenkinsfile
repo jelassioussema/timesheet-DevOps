@@ -1,0 +1,42 @@
+pipeline {
+
+    agent any
+
+
+    stages {
+       stage ('GIT') {
+            steps {
+               echo "Getting Project from Git"; 
+                git branch: "main", 
+                    url: "https://github.com/jelassioussema/timesheet-DevSecGitOps.git";
+                    
+            }
+        }
+
+        stage("Build") {
+            steps {
+                bat "mvn -version"
+                bat "mvn clean package -DskipTests"
+            }
+        }
+        
+        stage("Sonar") {
+            steps {
+                bat "mvn sonar:sonar"
+            }
+        }
+        
+        stage("DEPLOY") {
+            steps {
+                bat "mvn deploy -DskipTests"
+            }
+        }
+    }
+   
+    post {
+        always {
+            cleanWs()
+        }
+    }
+    
+}
